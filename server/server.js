@@ -12,13 +12,16 @@ console.log("Listening on 127.0.0.1:" + port);
 
 var onJoin = function(socket){
     socket.on('join', function(data){
+      socket.join('room1');
       socket.emit('msg', {'msg':'joined'});
       console.log("sent msg packet");
     });
 };
 
 var onMsg = function(socket){
-
+    socket.on('draw', function(data){
+      io.to('room1').emit('drawThis', data);
+    });
 };
 
 app.get('/', function(req, res){
