@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jshint server/ && jshint client/client.js",
-    "posttest": "echo \"test complete\""
+    "posttest": "echo \"test complete\"",
+    "start": "node ./server/server.js"
   },
   "author": "Ian Hampson",
   "license": "ISC",
